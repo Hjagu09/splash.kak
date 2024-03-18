@@ -24,10 +24,10 @@ hook -group splash global WinCreate '\*scratch\*' %{
 
    ┌───────────────────────────────────────────────────────────────────────┐
    │                                                                       │
-   │   ███ ◢██◤                                                            │
-   │   ███◢██◤                                                             │
-   │   █████◤◣                                                             │
-   │   ████◤◥█◣ A K O U N E                          /kə'kuːn/             │
+   │   ███ ██                                                            │
+   │   █████                                                             │
+   │   █████                                                             │
+   │   █████ A K O U N E                          /kə'kuːn/             │
    │                                                                       │
    │                                                                       │
    │                                                                       │
@@ -51,13 +51,13 @@ hook -group splash global WinCreate '\*scratch\*' %{
             "0:%opt(splash_frame)"
 
         # Colorize logo
-        add-highlighter window/logo_1 regex "███ ◢██◤" \
+        add-highlighter window/logo_1 regex "███ ██" \
             "0:%opt(splash_k_body)"
-        add-highlighter window/logo_2 regex "███◢██◤" \
+        add-highlighter window/logo_2 regex "█████" \
             "0:%opt(splash_k_body)"
-        add-highlighter window/logo_3 regex "(█████◤)(◣)" \
+        add-highlighter window/logo_3 regex "(█████)()" \
             "1:%opt(splash_k_body),%opt(splash_k_leg)+g" "2:%opt(splash_k_leg)"
-        add-highlighter window/logo_4 regex "(████◤)(◥█◣)" \
+        add-highlighter window/logo_4 regex "(████)(█)" \
             "1:%opt(splash_k_body)" "2:%opt(splash_k_leg)"
         add-highlighter window/logo_5 regex "A K O U N E" \
             0:default,+b
