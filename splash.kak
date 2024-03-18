@@ -12,10 +12,10 @@ declare-option -docstring 'Splash screen: phonetics background' str splash_phon_
 declare-option -docstring 'Splash screen: faded font color' str splash_faded rgb:8a8986
 
 hook -group splash global WinCreate '\*scratch\*' %{
-    evaluate-commands -save-regs S %{
+	evaluate-commands -save-regs S %{
 
-        # Fill register with content
-        set-register S \
+		# Fill register with content
+		set-register S \
 "
 
 
@@ -43,40 +43,40 @@ hook -group splash global WinCreate '\*scratch\*' %{
 
 
 "
-        # Paste content into buffer
-        execute-keys <esc><esc> <percent> <">S R
+		# Paste content into buffer
+		execute-keys <esc><esc> <percent> <">S R
 
-        # Colorize frame
-        add-highlighter window/borders regex "[─│┌┐└┘├┤┬┴┼]" \
-            "0:%opt(splash_frame)"
+		# Colorize frame
+		add-highlighter window/borders regex "[─│┌┐└┘├┤┬┴┼]" \
+			"0:%opt(splash_frame)"
 
-        # Colorize logo
-        add-highlighter window/logo_1 regex "███ ██" \
-            "0:%opt(splash_k_body)"
-        add-highlighter window/logo_2 regex "█████" \
-            "0:%opt(splash_k_body)"
-        add-highlighter window/logo_3 regex "(█████)()" \
-            "1:%opt(splash_k_body),%opt(splash_k_leg)+g" "2:%opt(splash_k_leg)"
-        add-highlighter window/logo_4 regex "(████)(█)" \
-            "1:%opt(splash_k_body)" "2:%opt(splash_k_leg)"
-        add-highlighter window/logo_5 regex "A K O U N E" \
-            0:default,+b
+		# Colorize logo
+		add-highlighter window/logo_1 regex "███ ██" \
+			"0:%opt(splash_k_body)"
+		add-highlighter window/logo_2 regex "█████" \
+			"0:%opt(splash_k_body)"
+		add-highlighter window/logo_3 regex "(█████)()" \
+			"1:%opt(splash_k_body),%opt(splash_k_leg)+g" "2:%opt(splash_k_leg)"
+		add-highlighter window/logo_4 regex "(████)(█)" \
+			"1:%opt(splash_k_body)" "2:%opt(splash_k_leg)"
+		add-highlighter window/logo_5 regex "A K O U N E" \
+			0:default,+b
 
-        # Colorize phonetic string
-        add-highlighter window/phon regex "/kə'kuːn/" \
-            "0:%opt(splash_phon_fg),%opt(splash_phon_bg)+b"
+		# Colorize phonetic string
+		add-highlighter window/phon regex "/kə'kuːn/" \
+			"0:%opt(splash_phon_fg),%opt(splash_phon_bg)+b"
 
-        # Colorize text elements
-        add-highlighter window/edit regex '^ *│ *(Edit this buffer) + (%c)' \
-            "1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
-        add-highlighter window/save regex '^ *│ *(Save on disk) + (:w) FILENAME (<enter>)' \
-            "1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
-        add-highlighter window/open regex '^ *│ *(Open a file) + (:e) (<space>)' \
-            "1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
-        add-highlighter window/help regex '^ *│ *(Read help) + (:doc) (<space>)' \
-            "1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
-        add-highlighter window/quit regex '^ *│ *(Quit) + (:q) (<enter>)' \
-            "1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
-    }
+		# Colorize text elements
+		add-highlighter window/edit regex '^ *│ *(Edit this buffer) + (%c)' \
+			"1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
+		add-highlighter window/save regex '^ *│ *(Save on disk) + (:w) FILENAME (<enter>)' \
+			"1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
+		add-highlighter window/open regex '^ *│ *(Open a file) + (:e) (<space>)' \
+			"1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
+		add-highlighter window/help regex '^ *│ *(Read help) + (:doc) (<space>)' \
+			"1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
+		add-highlighter window/quit regex '^ *│ *(Quit) + (:q) (<enter>)' \
+			"1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
+	}
 }
 
