@@ -27,7 +27,7 @@ hook -group splash global WinCreate '\*scratch\*' %{
 │                                                                       │
 │                                                                       │
 │                                                                       │
-│   Edit empy buffer                              i                     │
+│   Edit empty buffer                             i                     │
 │   Open a file                                   :e <space>            │
 │   Read help                                     :doc <space>          │
 │   Quit                                          :q <enter>            │
@@ -57,7 +57,7 @@ hook -group splash global WinCreate '\*scratch\*' %{
 			"0:%opt(splash_phon_fg),%opt(splash_phon_bg)+b"
 
 		# Colorize text elements
-		add-highlighter window/edit regex '^ *│ *(Edit this buffer) + (i)' \
+		add-highlighter window/edit regex '^ *│ *(Edit empty buffer) + (i)' \
 			"1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"
 		add-highlighter window/open regex '^ *│ *(Open a file) + (:e) (<space>)' \
 			"1:%opt(splash_faded)" 2:default,+b "3:%opt(splash_faded)"

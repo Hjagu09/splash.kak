@@ -26,11 +26,6 @@ Options are available to customize:
 Set these options globally in your `kakrc` file. Each color you specify
 must be a named color (e.g., `red`) or be in the rgb:RRGGBB format.
 
-## Note
-
-This plugin is just a hook that fires whenever Kakoune opens a buffer named
-\*scratch\*. Visible content is a register pasted into the scratch buffer.
-
 ## License
 
 MIT
