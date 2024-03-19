@@ -123,6 +123,19 @@ hook -group splash global WinCreate '\*scratch\*' %{
 		face buffer PrimaryCursorEol PrimaryCursorEol
 		# clear the buffer
 		execute-keys -draft %{%d}
+
+		# remove all highlighters used to color the thing
+		remove-highlighter window/borders
+		remove-highlighter window/logo_1
+		remove-highlighter window/logo_2
+		remove-highlighter window/logo_3
+		remove-highlighter window/logo_4
+		remove-highlighter window/logo_5
+		remove-highlighter window/phon
+		remove-highlighter window/edit
+		remove-highlighter window/open
+		remove-highlighter window/help
+		remove-highlighter window/quit
 	}
 }
 
