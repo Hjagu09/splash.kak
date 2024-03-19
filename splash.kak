@@ -73,6 +73,16 @@ hook -group splash global WinCreate '\*scratch\*' %{
 	# center the thingy hook
 	hook -group splash-center buffer WinResize .* %{
 		evaluate-commands %sh{
+			# press a key and remove the splash if the screen is to small
+			if [ "75" -gt "$kak_window_width" ]; then
+				printf "%s\n" "execute-keys -with-hooks %{h}"
+				exit
+			fi
+			if [ "17" -gt "$kak_window_height" ]; then
+				printf "%s\n" "execute-keys -with-hooks %{h}"
+				exit
+			fi
+		
 			# clear previous indent
 			# this may fail if their is no previous indent so its in a
 			# try block

@@ -2,6 +2,8 @@
 
 A splash screen for the Kakoune editor.
 
+The splash is always centerd on screen and is removed on to small screens
+
 ![Splash example](screenshot.png)
 
 # Installation
